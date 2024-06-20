@@ -25,20 +25,6 @@ services:
     depends_on:
       - mariadb
 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: app
-    ports:
-      - '8080:8080'
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/school_db
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-    depends_on:
-      - mariadb
-
 volumes:
   mariadb_data:
     driver: local
